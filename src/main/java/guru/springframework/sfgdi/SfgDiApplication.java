@@ -1,9 +1,6 @@
 package guru.springframework.sfgdi;
 
-import guru.springframework.sfgdi.controllers.ConstructorInjectedController;
-import guru.springframework.sfgdi.controllers.MyController;
-import guru.springframework.sfgdi.controllers.PropertyInjectedController;
-import guru.springframework.sfgdi.controllers.SetterInjectedController;
+import guru.springframework.sfgdi.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -14,6 +11,11 @@ public class SfgDiApplication {
 	public static void main(String[] args) {
 		//SpringApplication.run just returns a configurable application context.
 		ApplicationContext ctx = SpringApplication.run(SfgDiApplication.class, args);
+
+		//Example of using profiles
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+		System.out.println(i18nController.sayHello());
+
 		//Here we want to get an instance of the MyController bean from the application context.
 		//by default spring creates instance as class name with the first character lowercase.
 		MyController myController = (MyController) ctx.getBean("myController");
