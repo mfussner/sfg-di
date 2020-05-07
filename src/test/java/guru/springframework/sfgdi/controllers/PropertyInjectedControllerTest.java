@@ -1,10 +1,9 @@
 package guru.springframework.sfgdi.controllers;
 
-import guru.springframework.sfgdi.services.GreetingServiceImpl;
+import guru.springframework.sfgdi.services.ConstructorGreetingService;
+import guru.springframework.sfgdi.services.PropertyInjectedGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Example of property injection.
@@ -22,7 +21,7 @@ class PropertyInjectedControllerTest {
         //2. controller is dependent on a property called greeting service.
         //so we are going to make the property greeting service = to a new instance of greeting
         //service.  Hence we are injecting the property manually with an instance of the obj.
-        controller.greetingService = new GreetingServiceImpl();
+        controller.greetingService = new PropertyInjectedGreetingService();
     }
 
     @Test

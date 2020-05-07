@@ -1,11 +1,8 @@
 package guru.springframework.sfgdi.controllers;
 
-import guru.springframework.sfgdi.services.GreetingService;
-import guru.springframework.sfgdi.services.GreetingServiceImpl;
+import guru.springframework.sfgdi.services.ConstructorGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Example of constructor injection
@@ -18,7 +15,7 @@ class ConstructorInjectedControllerTest {
     @BeforeEach
     void setUp() {
         //Create new controller and pass in new instance of greeting service.
-        controller = new ConstructorInjectedController(new GreetingServiceImpl());
+        controller = new ConstructorInjectedController(new ConstructorGreetingService());
     }
 
     @Test
