@@ -19,9 +19,12 @@ public class SfgDiApplication {
 		MyController myController = (MyController) ctx.getBean("myController");
 
 		//execute the sayHello method on the controller.
-		String greeting = myController.sayHello();
+		//String greeting = myController.sayHello();
 		//will writing greeting output to the console.
-		System.out.println(greeting); // This should end up being "Hi Folks"
+		//System.out.println(greeting); // This should end up being "Hi Folks"
+
+		System.out.println("------------- Primary Bean Default ---------------");
+		System.out.println(myController.sayHello());
 
 		System.out.println("------------- Property Injection -----------------");
 		PropertyInjectedController propertyInjectedController = (PropertyInjectedController) ctx.getBean("propertyInjectedController");
@@ -34,6 +37,8 @@ public class SfgDiApplication {
 		System.out.println("------------- Constructor Injection -------------------");
 		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
 		System.out.println(constructorInjectedController.getGreeting());
+
+
 
 	}
 
